@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-service
+  namespace: catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog-service
+  template:
+    metadata:
+      labels:
+        app: catalog-service
+    spec:
+      containers:
+        - name: catalog-service
+          image: vanitha2612/catalog-service1:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5001
+          env:
+            - name: PRODUCTS_FILE_PATH
+              value: "/data/products.json"
+          volumeMounts:
+            - name: product-prices-volume
+              mountPath: /data
+              readOnly: true
+      volumes:
+        - name: product-prices-volume
+          configMap:
+            name: products-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalog-service
+  namespace: catalog
+spec:
+  selector:
+    app: catalog-service
+  ports:
+    - port: 5001
+      targetPort: 5001

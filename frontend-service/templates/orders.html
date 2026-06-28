@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders - AutoCart</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; background: #f7f7f8; }
+        h1 { color: #222; }
+        .nav a { margin-right: 16px; text-decoration: none; color: #2563eb; }
+        table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f1f1f3; }
+        .total { font-weight: bold; color: #16a34a; }
+        .error { color: #dc2626; background: #fee2e2; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>📦 My Orders</h1>
+    <div class="nav">
+        <a href="/">Products</a>
+        <a href="/orders">My Orders</a>
+    </div>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <table>
+        <tr><th>Order ID</th><th>Product</th><th>Unit Price</th><th>Qty</th><th>Total</th></tr>
+        {% for o in orders %}
+        <tr>
+            <td>{{ o.order_id }}</td>
+            <td>{{ o.product_name }}</td>
+            <td>${{ "%.2f"|format(o.unit_price) }}</td>
+            <td>{{ o.quantity }}</td>
+            <td class="total">${{ "%.2f"|format(o.total) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

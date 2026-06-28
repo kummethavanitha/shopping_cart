@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: products-config
+  namespace: catalog
+data:
+  products.json: |
+    [
+      { "id": 1, "name": "Wireless Mouse", "price": 19.99 },
+      { "id": 2, "name": "Mechanical Keyboard", "price": 49.99 },
+      { "id": 3, "name": "USB-C Hub", "price": 24.99 },
+      { "id": 4, "name": "Laptop Stand", "price": 29.99 },
+      { "id": 5, "name": "Webcam HD", "price": 34.99 }
+    ]
+
