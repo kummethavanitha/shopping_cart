@@ -16,7 +16,7 @@ spec:
       containers:
         - name: order-service
           image: vanitha2612/order-service:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 5002
           env:
