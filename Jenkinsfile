@@ -25,7 +25,7 @@ pipeline {
             steps {
                 // Pulls the latest code from your GitHub repo.
                 // Since it's public, no credentials needed here.
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/kummethavanitha/shopping_cart.git'
             }
         }
