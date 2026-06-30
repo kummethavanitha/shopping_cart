@@ -16,7 +16,7 @@ spec:
       containers:
         - name: frontend
           image: vanitha2612/frontend-service:latest
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
