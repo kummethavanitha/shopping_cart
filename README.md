@@ -70,32 +70,33 @@ The application is developed and tested locally using VirtualBox and Minikube.
 
 ## 📁 Project Structure
 
-
+```text
 shopping_cart/
 
 ├── catalog-service/
-│ ├── app code
-│ ├── Dockerfile
-│ └── requirements.txt
+│   ├── app code
+│   ├── Dockerfile
+│   └── requirements.txt
 │
 ├── order-service/
-│ ├── app code
-│ ├── Dockerfile
-│ └── requirements.txt
+│   ├── app code
+│   ├── Dockerfile
+│   └── requirements.txt
 │
 ├── frontend-service/
-│ ├── app code
-│ ├── Dockerfile
-│ └── requirements.txt
+│   ├── app code
+│   ├── Dockerfile
+│   └── requirements.txt
 │
 ├── k8s/
-│ ├── 00-namespaces.yaml
-│ ├── 01-catalog-service.yaml
-│ ├── 02-order-service.yaml
-│ ├── 03-frontend-service.yaml
-│ └── 04-configmap.yaml
+│   ├── 00-namespaces.yaml
+│   ├── 01-catalog-service.yaml
+│   ├── 02-order-service.yaml
+│   ├── 03-frontend-service.yaml
+│   └── 04-configmap.yaml
 │
-└── Jenkinsfile
+└── Jenkinsfile 
+```
 
 ## 🛠️ Technologies Used
 
@@ -108,6 +109,5 @@ shopping_cart/
 | CI/CD | Jenkins |
 | Source Control | GitHub |
 | Configuration Management | Kubernetes ConfigMap |
-| Environment |  Linux |
-
+| Environment | VirtualBox + Linux |
 
